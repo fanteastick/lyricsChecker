@@ -10,10 +10,10 @@ public class checkinLyrics {
     public static void main(String[] args) {
         JOptionPane.showMessageDialog(frame, "Welcome to the lyrics checker!");
         String lyrics = asker();
-        String[] word = taboo();
+        String[] words = taboo();
         
         System.out.println("Your lyrics are: " + lyrics);
-        System.out.println("The word you're looking for is: " + turnToString(word));
+        System.out.println("The word you're looking for is: " + turnToString(words));
     }
     // TODO in other method, make the inputs toUpperCase();
     public static String asker() {
@@ -22,23 +22,28 @@ public class checkinLyrics {
     }
     public static String[] taboo() {
         String theWord = JOptionPane.showInputDialog(frame, "What word are you looking for?");
-        String[] wordArr = new String[1];
+        
         int i = 0;
+        String[] wordArr = new String[1];
+        wordArr[0] = theWord;
+        String[] listWords = new String[i];
+        // TODO change this to a do/while loop
         while (theWord.equals("END") == false) {
-            String[] listWords = Arrays.copyOf(wordArr, i+1);
+            listWords = Arrays.copyOf(wordArr, i+2);
             listWords[i] = theWord;
             i++;
             theWord = JOptionPane.showInputDialog(frame, "Is there another word? Type \"END\" to stop.");
         }
-        return wordArr;
+        System.out.println(listWords[0] + listWords[1]);
+        return listWords;
     }
     
-    // TODO fix this method lol
     public static String turnToString(String[] arr) {
         String hi = "";
         for (int i = 0; i<arr.length; i++) {
             hi = hi + " " + arr[i];
         }
-        return hi; //idk why this returns null
+        System.out.println(hi);
+        return hi;
     }
 }
