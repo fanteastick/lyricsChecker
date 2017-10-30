@@ -1,7 +1,7 @@
 package lyrics;
 
 import java.awt.Component;
-
+import java.util.*;
 import javax.swing.JOptionPane;
 
 public class checkinLyrics {
@@ -9,7 +9,6 @@ public class checkinLyrics {
 
     public static void main(String[] args) {
         JOptionPane.showMessageDialog(frame, "Welcome to the lyrics checker!");
-        String cuantos = JOptionPane.showInputDialog(frame, "How many words are you checking for?");
         String lyrics = asker();
         String word = taboo();
         
@@ -23,6 +22,14 @@ public class checkinLyrics {
     }
     public static String taboo() {
         String theWord = JOptionPane.showInputDialog(frame, "What word are you looking for?");
+        String[] wordArr = new String[1];
+        int i = 0;
+        while (theWord.equals("END") == false) {
+            String[] listWords = Arrays.copyOf(wordArr, i+1);
+            listWords[i] = theWord;
+            i++;
+            theWord = JOptionPane.showInputDialog(frame, "Is there another word? Type \"END\" to stop.");
+        }
         return theWord;
     }
 }
