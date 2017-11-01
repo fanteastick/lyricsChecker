@@ -36,7 +36,8 @@ public class checkinLyrics {
             i++;
 
         } while (theWord.equals("END") == false);
-        String[] finalArray = Arrays.copyOf(listWords, listWords.length - 1); // takes off the END entry. not very elegant.
+        String[] finalArray = Arrays.copyOf(listWords, listWords.length - 1); // takes off the END entry. not very
+                                                                              // elegant.
         /*
          * println's checking if you got the right arrays
          * System.out.println(Arrays.toString(finalArray));
