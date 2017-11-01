@@ -13,7 +13,8 @@ public class checkinLyrics {
         String[] words = taboo();
 
         System.out.println("Your lyrics are: " + lyrics);
-        System.out.println("The word you're looking for is: " + turnToString(words));
+        String statement = plural(words);
+        System.out.println(statement + turnToString(words));
     }
 
     // TODO in other method, make the inputs toUpperCase();
@@ -49,9 +50,16 @@ public class checkinLyrics {
     public static String turnToString(String[] arr) {
         String hi = "";
         for (int i = 0; i < arr.length; i++) {
-            hi = hi + " " + arr[i];
+            hi = hi + arr[i] + " ";
         }
         System.out.println(hi);
         return hi;
+    }
+    
+    public static String plural(String[] arr) {
+        if (arr.length <2) {
+            return "The word you're looking for is: ";
+        }
+        return "The words you're looking for are: ";
     }
 }
