@@ -1,5 +1,6 @@
 # lyricsChecker
 A checker idea for lyrics that I thought of
+
 The plan: 
 >User starts sequence
 >Program starts
