@@ -30,3 +30,5 @@ Future plans:
 
 >learn how to make pull requests through terminal
 
+# Update Log
+> 11/1/17: Added webhooks to discord! My server will be notified when new events occur.
