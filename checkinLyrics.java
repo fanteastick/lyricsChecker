@@ -13,8 +13,7 @@ public class checkinLyrics {
         String[] words = taboo();
 
         System.out.println("Your lyrics are: " + lyrics);
-        String statement = plural(words);
-        System.out.println(statement + turnToString(words));
+        System.out.println(plural(words));
     }
 
     // TODO in other method, make the inputs toUpperCase();
@@ -57,9 +56,10 @@ public class checkinLyrics {
     }
     
     public static String plural(String[] arr) {
+        String turned = turnToString(arr);
         if (arr.length <2) {
-            return "The word you're looking for is: ";
+            return "The word you're looking for is: " + turned;
         }
-        return "The words you're looking for are: ";
+        return "The words you're looking for are: " + turned;
     }
 }
