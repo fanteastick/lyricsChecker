@@ -14,9 +14,12 @@ public class checkinLyrics {
 
         System.out.println("Your lyrics are: " + lyrics);
         System.out.println(plural(words));
+
+        System.out.println("Now performing lyrics search...");
+        // String searcher = search(lyrics, words);
+        // TODO make a search method that includes toUpperCase
     }
 
-    // TODO in other method, make the inputs toUpperCase();
     public static String asker() {
         String allLyrics = JOptionPane.showInputDialog(frame, "Please input the song lyrics:");
         return allLyrics;
@@ -30,12 +33,13 @@ public class checkinLyrics {
         wordArr[0] = theWord;
         String[] listWords = Arrays.copyOf(wordArr, wordArr.length);
         do {
-            theWord = JOptionPane.showInputDialog(frame, "Is there another word? Type \"END\" to stop.");
+            theWord = JOptionPane.showInputDialog(frame, "Is there another word? Enter nothing to stop.");
             listWords = Arrays.copyOf(listWords, listWords.length + 1);
             listWords[i] = theWord;
             i++;
 
-        } while (theWord.equals("END") == false);
+        } while (theWord.length() != 0);
+        // TODO add something for if the user inputs an empty string
         String[] finalArray = Arrays.copyOf(listWords, listWords.length - 1); // takes off the END entry. not very
                                                                               // elegant.
         /*
@@ -54,12 +58,12 @@ public class checkinLyrics {
         System.out.println(hi);
         return hi;
     }
-    
+
     public static String plural(String[] arr) {
         String turned = turnToString(arr);
-        if (arr.length <2) {
+        if (arr.length < 2) {
             return "The word you're looking for is: " + turned;
         }
-        return "The words you're looking for are: " + turned;
+        return "The " + arr.length + " words you're looking for are: " + turned;
     }
 }
